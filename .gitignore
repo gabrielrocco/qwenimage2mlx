@@ -1,0 +1,20 @@
+# weights / caches — never commit (downloaded at runtime to ~/.cache)
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.gguf
+.cache/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.DS_Store
+*.png
+*.jpg
+# local env / secrets
+.env
+*.token
+.venv/
+venv/

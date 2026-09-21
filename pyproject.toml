@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qwenimage2mlx"
+version = "0.1.0"
+description = "Run Qwen-Image-2.1 text-to-image on Apple Silicon via MLX, with q8/q4 quantization."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+keywords = ["mlx", "qwen-image", "diffusion", "apple-silicon", "text-to-image"]
+dependencies = [
+    "mlx>=0.32",
+    "numpy",
+    "pillow",
+    "huggingface_hub>=0.24",
+    "transformers>=4.50",
+    "diffusers>=0.41",
+    "torch",
+    "safetensors",
+    "tqdm",
+]
+
+[project.scripts]
+qwen21-generate = "qwenimage2mlx.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["qwenimage2mlx*"]
